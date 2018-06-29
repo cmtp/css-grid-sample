@@ -1,43 +1,26 @@
-main > * {
-    background: goldenrod;
-    padding: 10px;
-    font-size: 3em;
-}
-
-/** Definimos el GRID container **/
 main {
+    height: 100vh;
     display: grid;
-    grid-gap: 10px;
-    grid-template-areas: 
-        "header"
-        "izquierda"
-        "contenido"
-        "derecha"
-        "footer"
+    grid-gap: 20px;
+    grid-template-columns: 100px 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px;
 }
-/* Desktop */
-@media (min-width: 500px) {
-    main {
-        grid-template-areas:
-            "header header header"
-            "izquierda contenido derecha"
-            "footer footer footer";
+div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: goldenrod;
+}
+@media (max-width: 600px) {    
+    div:nth-child(10) {
+        background: purple;
+        /* grid-column-start: 3;
+        grid-column-end: 5; */
+        grid-column: 3 / 5;
     }
-}
-
-/* Nombramos los elementos */
-header {
-    grid-area: header;
-}
-aside:first-of-type {
-    grid-area: izquierda;
-}
-article {
-    grid-area: contenido;
-}
-aside:last-of-type {
-    grid-area: derecha;
-}
-footer {
-    grid-area: footer;
+    div:nth-child(6) {
+        background: purple;
+        grid-column: 2 / 3;
+        grid-row: 2 / 4;
+    }
 }
