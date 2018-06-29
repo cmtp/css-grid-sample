@@ -1,3 +1,43 @@
-html, body {
-    background: #fff;
+main > * {
+    background: goldenrod;
+    padding: 10px;
+    font-size: 3em;
+}
+
+/** Definimos el GRID container **/
+main {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-areas: 
+        "header"
+        "izquierda"
+        "contenido"
+        "derecha"
+        "footer"
+}
+/* Desktop */
+@media (min-width: 500px) {
+    main {
+        grid-template-areas:
+            "header header header"
+            "izquierda contenido derecha"
+            "footer footer footer";
+    }
+}
+
+/* Nombramos los elementos */
+header {
+    grid-area: header;
+}
+aside:first-of-type {
+    grid-area: izquierda;
+}
+article {
+    grid-area: contenido;
+}
+aside:last-of-type {
+    grid-area: derecha;
+}
+footer {
+    grid-area: footer;
 }

@@ -4,7 +4,7 @@
   "description": "this is a demo of css-grid and flexbox",
   "main": "index.html",
   "scripts": {
-    "dev": "lite-server"
+    "serve": "lite-server"
   },
   "repository": "http://localhost",
   "author": "cmtp",
